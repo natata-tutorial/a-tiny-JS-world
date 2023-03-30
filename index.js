@@ -50,33 +50,13 @@ const catWoman = {
    saying: cat.saying,
 };
 // ======== OUTPUT ========
-/* Use print(message) for output.
-   Default tag for message is <pre>. Use print(message,'div') to change containing element tag.
 
-   Message can contain HTML markup. You may also tweak index.html and/or styles.css.
-   However, please, REFRAIN from improving visuals at least until your code is reviewed
-   so code reviewers might focus on a single file that is index.js.
-   */
 
-/* Print examples:
-   print('ABC');
-   print('<strong>ABC</strong>');
-   print('<strong>ABC</strong>', 'div');
+const population = [cat, dog, man, woman, catWoman];
+const objFields = ["species", "name", "gender", "legs", "hands", "saying", "friends"];
 
-   print('human; John; male; 2; 2; Hello world!; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
-   */
-
-function generateOutput(obj) {
-   let str = '', key;
-   for (key in obj) {
-      if (obj[key]) str += key + ': ' + obj[key] + '; ';
-   }
-   return str;
+population.map((soul) => {
+   print(objFields.map(key => key + ": " + soul[key] + "; ").join(" "));
 }
-print(generateOutput(dog));
-print(generateOutput(cat));
-print(generateOutput(man));
-print(generateOutput(woman));
-print(generateOutput(catWoman));
+
+);
