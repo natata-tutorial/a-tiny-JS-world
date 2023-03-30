@@ -8,8 +8,47 @@ import { print } from './js/lib.js';
 
 // ======== OBJECTS DEFINITIONS ========
 // Define your objects here
-
-
+const dog = {
+   species: 'dog',
+   name: 'Jack',
+   gender: 'male',
+   legs: 4,
+   hands: 0,
+   saying: 'woof-woof!'
+};
+const cat = {
+   species: 'cat',
+   name: 'Lili',
+   gender: 'female',
+   legs: 4,
+   hands: 0,
+   saying: 'meow!'
+};
+const woman = {
+   species: 'woman',
+   name: 'Nata',
+   gender: 'female',
+   legs: 2,
+   hands: 2,
+   saying: 'hi!'
+};
+const man = {
+   species: 'man',
+   name: 'Oleg',
+   gender: 'male',
+   legs: 2,
+   hands: 2,
+   saying: 'hey!',
+   friends: cat.name,
+};
+const catWoman = {
+   species: 'cat-woman',
+   name: 'Cat Nata',
+   gender: 'female',
+   legs: 4,
+   hands: 0,
+   saying: cat.saying,
+};
 // ======== OUTPUT ========
 /* Use print(message) for output.
    Default tag for message is <pre>. Use print(message,'div') to change containing element tag.
@@ -28,3 +67,16 @@ import { print } from './js/lib.js';
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
    */
+
+function generateOutput(obj) {
+   let str = '', key;
+   for (key in obj) {
+      if (obj[key]) str += key + ': ' + obj[key] + '; ';
+   }
+   return str;
+}
+print(generateOutput(dog));
+print(generateOutput(cat));
+print(generateOutput(man));
+print(generateOutput(woman));
+print(generateOutput(catWoman));
